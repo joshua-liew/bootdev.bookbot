@@ -1,4 +1,4 @@
-from stats import get_count_words, get_count_chars
+from stats import get_count_words, get_count_chars, to_sorted_list, print_report
 
 
 def get_book_text(filepath):
@@ -10,10 +10,9 @@ def get_book_text(filepath):
 def main():
     text = get_book_text("./books/frankenstein.txt")
     num_words = get_count_words(text)
-    print(F"{num_words} words found in the document")
-
     num_chars = get_count_chars(text)
-    print(num_chars)
+    num_chars_list = to_sorted_list(num_chars)
+    print_report(num_words, num_chars_list)
 
 
 if __name__ == "__main__":
